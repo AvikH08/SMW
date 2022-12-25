@@ -1,10 +1,14 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
+const db = require('./config/mongoose.js');
+
 
 app.use(express.static('./assets'));
 app.use(expressLayouts);
+app.use(express.urlencoded());
 //by default , it runs on port 80
 
 
